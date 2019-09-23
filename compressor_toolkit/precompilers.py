@@ -57,10 +57,11 @@ class SCSSCompiler(BaseCompiler):
     """
     django-compressor pre-compiler for SCSS files.
 
-    Consists of 2 steps:
+    Consists of 3 steps:
 
     1. ``node-sass input.scss output.css``
     2. ``postcss --use autoprefixer -r output.css``
+    3. ``postcss --use uncss -r output.css``
 
     Includes all available 'static' dirs:
 
