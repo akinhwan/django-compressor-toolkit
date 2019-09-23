@@ -37,6 +37,7 @@ class CompressorToolkitConfig(AppConfig):
     SCSS_COMPILER_CMD = getattr(settings, 'COMPRESS_SCSS_COMPILER_CMD', (
         '{node_sass_bin} --output-style expanded {paths} "{infile}" > "{outfile}" && '
         '{postcss_bin} --use "{node_modules}/autoprefixer" '
+        '{postcss_bin} --use "{node_modules}/uncss" '
         '--autoprefixer.browsers "{autoprefixer_browsers}" -r "{outfile}"'
     ))
 
